@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(require('./routes/usuario'));
 
-mongoose.connect('mongodb://localhost:27017/cafe', {
+mongoose.connect(process.env.URLDB, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }, (error, res) => {
